@@ -1,0 +1,50 @@
+<html>
+<body>
+
+    <img id="myImage" src="test.jpg"/>
+
+    </body>
+    <style>
+         .overlays{
+        position:absolute;
+    }   
+    </style>
+<script>
+   const img = document.querySelector("img")
+img.onclick = (e) => {
+  const x = e.pageX - e.target.offsetLeft; //pageX -  gets horizontal coordinate wrt the webpage
+  const y = e.pageY - e.target.offsetTop; //pageY - gets vertical coordinate wrt the webpage
+  console.log(x, y);
+
+    // myImage : ID of image on which to place new image
+
+    var image = document.getElementById('myImage');
+    
+    //console.log(image.width);
+    
+    margin = 20;
+    
+    l = image.offsetLeft;
+    t = image.offsetTop;
+    w = image.width;
+    h = image.height;
+    
+    // Location inside the image
+    offX = parseInt(Math.random() * w);
+    offY = parseInt(Math.random() * h);
+    
+    if(offX > margin) offX -= margin;
+    if(offY > margin) offY -= margin;
+
+    l += offX;
+    t += offY;
+
+    var newImage = document.createElement("img");
+    newImage.setAttribute('src', 'test2.jpg');
+    newImage.setAttribute('class', 'overlays');
+    newImage.style.left = x + "px";
+    newImage.style.top = y + "px";
+    document.body.appendChild(newImage);
+}    
+</script>
+</html>

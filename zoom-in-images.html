@@ -1,0 +1,47 @@
+<html>
+    <img src="test2.jpg">
+<script>
+    const img = document.querySelector('img');
+img.onclick = (e) => {
+    const currWidth = img.clientWidth;
+    if(currWidth >= 1000){
+        alert("You’re fully zoomed in!");
+    } else{
+        img.style.width = (currWidth + 100) + "px";
+    } }
+
+/*  
+    const img = document.querySelector('img');
+img.onclick = (e) => {
+    const currWidth = img.clientWidth;
+    if(currWidth >= 1000){
+        alert("You’re fully zoomed in!");
+    } else{
+        img.style.width = (currWidth + 100) + "px";
+    } 
+}*/
+
+/*const img = document.querySelector('img');
+window.onscroll = (e)=>{
+    const currWidth = img.clientWidth;
+    if(currWidth >= 1000){
+        alert("You’re fully zoomed in!");
+    } else{
+        img.style.width = (currWidth + 100) + "px";
+    } 
+}
+
+let img = document.querySelector("img");
+  img.addEventListener("mousedown", event => {
+    const currWidth = img.clientWidth;
+      if (event.button == 1) {  
+    if(currWidth >= 1000){
+        alert("You’re fully zoomed in!");
+    }else{
+        img.style.width = (currWidth + 100) + "px";
+    } 
+    
+    }});*/
+</script>
+</html>
+ 

@@ -1,0 +1,43 @@
+<html>
+    <img src="test.jpg">
+<script>
+    const img = document.querySelector("img")
+img.onclick = (e) => {
+  const x = e.pageX - e.target.offsetLeft; //pageX -  gets horizontal coordinate wrt the webpage
+  const y = e.pageY - e.target.offsetTop; //pageY - gets vertical coordinate wrt the webpage
+  console.log(x, y);
+}
+</script>
+</html>
+
+//The target event property returns the element that triggered the event
+//The offsetLeft property returns the left position (in pixels) relative to the parent.
+
+/*
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body style="font:17px Calibri;">
+    <p>Click anywhere on the image to show a text at the precise mouse click location.</p>
+
+    <div>
+        <img id="img01" src="test.jpg" />
+    </div>
+    <div id="divIntro" style="width:auto;display:none;"></div>
+</body>
+<script>
+    $(document).ready(function () {
+        $('#img01').click(function (e) {
+            $('#divIntro')
+                .show()
+                .text('At location - X: ' + e.pageX + ' Y:' + e.pageY)
+                .css({ position: 'absolute', color: '#fff',
+                    left: e.pageX, top: e.pageY
+            });
+        });
+    });
+</script>
+</html>
+*

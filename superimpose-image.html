@@ -1,0 +1,11 @@
+<html>
+    <img src="test.jpg">
+<script>
+    const img = document.querySelector("img")
+img.onclick = (e) => {
+  const x = e.pageX - e.target.offsetLeft;
+  const y = e.pageY - e.target.offsetTop;
+  console.log(x, y);
+}
+</script>
+</html>

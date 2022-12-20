@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 100px; /* Should be removed. Only for demonstration */
+}
+
+
+
+.overlays{
+        position:absolute;
+        height:200px;
+        width:200px;
+    } 
+
+img {
+ max-width:100%;
+ height:auto;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+div.gallery {
+  margin: 5px;
+  border: 2px solid #ccc;
+  float: left;
+  width: auto;
+}
+
+div.gallery img:hover {
+  border: 4px solid #777;
+}
+
+div.gallery img {
+  width: 200px;
+  height: 200px;
+}
+
+
+.checkbox 
+{
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 30;
+  width: 30;
+  background-color: #eee;
+}
+
+:checked
+{
+   display: none;
+};
+
+
+</style>
+</head>
+<body>
+ 
+<h2>Responsive Two Column Layout</h2>
+
+  <div class="column">
+    <img id = "background_img" src="test.jpg" alt="refresh" style="width:100%;"/>
+      <output id="result"></output>
+  </div>
+  <div class="column">
+      <label for="files">Upload Images:</label>
+      <input type="file" id="files" name="files[]" multiple="multiple" accept="image/*"/><br><br>
+      <label for="Xcoord">X:</label>
+      <input type="text" id="xcoord"/><br><br>
+      <label for="Ycoord">Y: </label>
+      <input type="text" id="ycoord"/><br><br>
+   <input id="modify_position" type="submit" value="Modify Position" onclick="overlay()"/><br><br>    
+   <input id="save_position" type="submit" value="Save Position" onclick="remove()" />     
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

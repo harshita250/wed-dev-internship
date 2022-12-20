@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-grey.css">
+
+</head>
+<style>
+  
+.overlays{
+        position:absolute;
+    } 
+
+#result
+{
+    display:absolute;
+}
+div.gallery {
+  float: left;
+  width: 250px;
+  margin: 5px 5px;
+  gap:10px;
+}
+
+div.gallery img:hover {
+  border:5px solid #777;
+ }
+
+
+input[type="checkbox"][class="mycheckbox"] {
+  display: none;
+}
+
+.label-checkbox {
+  padding: 8px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.label-checkbox:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 28px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+.label-checkbox img.mycheckbox {
+  height: 200px;
+  width: 200px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+  border-radius: 5%;
+}
+
+:checked + .label-checkbox {
+  border-color: #ddd;
+}
+
+:checked +.label-checkbox:before {
+  content: "✓";
+  background-color: rgba(128, 128, 128, 0.632);
+  border-radius: 50%;
+  transform: scale(1);
+}
+
+:checked + .label-checkbox img.mycheckbox {
+  transform: scale(0.9);
+  border-radius: 5%;
+  /* box-shadow: 0 0 5px #333; */
+  z-index: -1;
+}
+.html
+{
+   scroll-behavior: smooth;
+}
+
+
+    </style>
+   
+<body>
+ 
+                <form class="w3-container w3-light-grey"><br><br>
+  <div class="w3-container w3-card-4 w3-light-grey w3-center ">
+    <div class="w3-responsive">
+    
+        <div class="w3-text-white w3-theme-l1 w3-panel w3-wide w3-card-4">
+        <h2><b>Machine Location Setter</b></h2>
+        </div>
+        <table class="w3-table">
+
+        <tr>
+                <th>Layout Plan</th>
+                <th>Upload Images on Layout</th>
+        </tr>
+
+        <tr>
+
+            <td style="width:800px;height:800px;text-align:center;vertical-align: middle;">
+                <img id = "background_img" src="cad.png" alt="refresh" style="width:100%;height: 100%;"/>
+                <output id="overlay-img"></output>
+            </td>
+      
+            <td>
+                <form><br><br>
+                <input type="file" id="files" name="files[]" multiple="multiple" accept="image/*" /><br><br>
+                <label class="w3-text-theme-d2" for="Xcoord"><b>X-Coordinate:</b>
+                <input class="w3-input w3-border-0 w3-round-large" type="text" id="xcoord"/></label><br><br>
+                <label class="w3-theme-text-d1" for="Ycoord"><b>Y-Coordinate:</b>
+                <input class="w3-input w3-border-0 w3-round-large" type="text" id="ycoord"/></label><br><br>
+                <button type='button' class="w3-button w3-ripple w3-round-large w3-theme-d3" onclick="overlay()">Modify Position</button>
+                <button type='button' class="w3-button w3-ripple w3-round-large w3-theme-d3">Save Position</button>
+                <br><br><br>
+              
+                </form>
+            </td>
+
+        </tr> 
+
+        <tr>
+
+             
+
+         </tr>
+
+
+
+
+        </table>
+
+      
+    <div class="w3-theme-l1 w3-panel w3-wide w3-card-4">
+      <h2><b>Gallery</b></h2></div>
+    
+
+    
+<output id="result"></output>
+
+</div>
+
+</div>
+
+
+<script src="script-final.js"></script>
+
+</body>
+</html>
